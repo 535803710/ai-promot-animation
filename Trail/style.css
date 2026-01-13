@@ -1,0 +1,88 @@
+/* Cosmic Trails - 现代粒子轨道动画样式 */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+:root {
+  --bg-color: #000000;
+  --text-main: #ffffff;
+  --text-dim: #888888;
+  --accent-glow: rgba(255, 255, 255, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle at center, #111 0%, #000 100%);
+  color: var(--text-main);
+  font-family: "Outfit", sans-serif;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#world {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* UI 覆盖层 */
+.ui-container {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  z-index: 10;
+  pointer-events: none;
+  user-select: none;
+}
+
+.ui-container h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #fff 0%, #888 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 4px;
+}
+
+.ui-container p {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
+
+.interaction-hint {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  color: #555;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  z-index: 10;
+  pointer-events: none;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
